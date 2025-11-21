@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$i_aw+$xpfak9iv(+_l9252vk1s@16c=1!8h=x(c7t(^=vmc=i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -132,8 +132,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 #jwt
-REST_FRAMEWORK = {
+REST_FRAMEWORK= {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+
+#local development
+CORS_ALLOW_ALL_ORIGINS= True
+CORS_ALLOW_CREDENTIALS = True
